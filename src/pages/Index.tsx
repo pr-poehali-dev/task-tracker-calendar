@@ -130,7 +130,7 @@ const Index = () => {
   const upcomingEvents = events.filter(e => e.date >= new Date()).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-peach-50 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-mint-50 to-orange-50 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-2 flex items-center justify-center gap-3">
@@ -142,33 +142,33 @@ const Index = () => {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 animate-scale-in">
-          <Card className="bg-gradient-to-br from-pink-100 to-pink-50 border-pink-200 hover-scale">
+          <Card className="bg-gradient-to-br from-green-100 to-green-50 border-green-200 hover-scale">
             <CardHeader className="pb-3">
               <CardTitle className="text-lg flex items-center gap-2">
-                <Icon name="CheckCircle2" size={24} className="text-pink-500" />
+                <Icon name="CheckCircle2" size={24} className="text-green-600" />
                 Задачи
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-pink-600">{completedTasks}/{totalTasks}</div>
+              <div className="text-3xl font-bold text-green-600">{completedTasks}/{totalTasks}</div>
               <p className="text-sm text-muted-foreground mt-1">выполнено</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-100 to-purple-50 border-purple-200 hover-scale">
+          <Card className="bg-gradient-to-br from-orange-100 to-orange-50 border-orange-200 hover-scale">
             <CardHeader className="pb-3">
               <CardTitle className="text-lg flex items-center gap-2">
-                <Icon name="Calendar" size={24} className="text-purple-500" />
+                <Icon name="Calendar" size={24} className="text-orange-600" />
                 События
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-purple-600">{upcomingEvents}</div>
+              <div className="text-3xl font-bold text-orange-600">{upcomingEvents}</div>
               <p className="text-sm text-muted-foreground mt-1">предстоящих</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-peach-100 to-peach-50 border-orange-200 hover-scale">
+          <Card className="bg-gradient-to-br from-mint-100 to-mint-50 border-green-200 hover-scale">
             <CardHeader className="pb-3">
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icon name="ShoppingBag" size={24} className="text-orange-500" />
@@ -184,15 +184,15 @@ const Index = () => {
 
         <Tabs defaultValue="tasks" className="animate-fade-in">
           <TabsList className="grid w-full grid-cols-3 mb-6 bg-white/80 backdrop-blur">
-            <TabsTrigger value="tasks" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-200 data-[state=active]:to-pink-100">
+            <TabsTrigger value="tasks" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-200 data-[state=active]:to-green-100">
               <Icon name="ListTodo" size={20} className="mr-2" />
               Задачи
             </TabsTrigger>
-            <TabsTrigger value="calendar" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-200 data-[state=active]:to-purple-100">
+            <TabsTrigger value="calendar" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-200 data-[state=active]:to-orange-100">
               <Icon name="CalendarDays" size={20} className="mr-2" />
               Календарь
             </TabsTrigger>
-            <TabsTrigger value="shopping" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-200 data-[state=active]:to-orange-100">
+            <TabsTrigger value="shopping" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-mint-200 data-[state=active]:to-mint-100">
               <Icon name="ShoppingCart" size={20} className="mr-2" />
               Покупки
             </TabsTrigger>
@@ -205,12 +205,12 @@ const Index = () => {
                   <span>Мои задачи</span>
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button size="sm" className="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600">
+                      <Button size="sm" className="bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600">
                         <Icon name="Plus" size={18} className="mr-1" />
                         Добавить
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="bg-gradient-to-br from-pink-50 to-purple-50">
+                    <DialogContent className="bg-gradient-to-br from-green-50 to-orange-50">
                       <DialogHeader>
                         <DialogTitle>Новая задача</DialogTitle>
                       </DialogHeader>
@@ -238,7 +238,7 @@ const Index = () => {
                             </SelectContent>
                           </Select>
                         </div>
-                        <Button onClick={addTask} className="w-full bg-gradient-to-r from-pink-400 to-pink-500">
+                        <Button onClick={addTask} className="w-full bg-gradient-to-r from-green-400 to-green-500">
                           Добавить задачу
                         </Button>
                       </div>
@@ -250,12 +250,12 @@ const Index = () => {
                 {tasks.map(task => (
                   <div
                     key={task.id}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-white border border-pink-100 hover:border-pink-200 transition-all hover-scale"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-white border border-green-100 hover:border-green-200 transition-all hover-scale"
                   >
                     <Checkbox
                       checked={task.completed}
                       onCheckedChange={() => toggleTask(task.id)}
-                      className="data-[state=checked]:bg-pink-400 data-[state=checked]:border-pink-400"
+                      className="data-[state=checked]:bg-green-400 data-[state=checked]:border-green-400"
                     />
                     <span className={`flex-1 ${task.completed ? 'line-through text-muted-foreground' : ''}`}>
                       {task.title}
@@ -280,7 +280,7 @@ const Index = () => {
                     mode="single"
                     selected={date}
                     onSelect={setDate}
-                    className="rounded-md border border-purple-200"
+                    className="rounded-md border border-orange-200"
                   />
                 </CardContent>
               </Card>
@@ -291,12 +291,12 @@ const Index = () => {
                     <span>События</span>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button size="sm" className="bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600">
+                        <Button size="sm" className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600">
                           <Icon name="Plus" size={18} className="mr-1" />
                           Добавить
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="bg-gradient-to-br from-purple-50 to-pink-50">
+                      <DialogContent className="bg-gradient-to-br from-orange-50 to-green-50">
                         <DialogHeader>
                           <DialogTitle>Новое событие</DialogTitle>
                         </DialogHeader>
@@ -325,7 +325,7 @@ const Index = () => {
                               </SelectContent>
                             </Select>
                           </div>
-                          <Button onClick={addEvent} className="w-full bg-gradient-to-r from-purple-400 to-purple-500">
+                          <Button onClick={addEvent} className="w-full bg-gradient-to-r from-orange-400 to-orange-500">
                             Добавить событие
                           </Button>
                         </div>
@@ -337,7 +337,7 @@ const Index = () => {
                   {events.sort((a, b) => a.date.getTime() - b.date.getTime()).map(event => (
                     <div
                       key={event.id}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 hover-scale"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-orange-50 to-green-50 border border-orange-100 hover-scale"
                     >
                       <span className="text-2xl">{getEventIcon(event.type)}</span>
                       <div className="flex-1">
@@ -369,7 +369,7 @@ const Index = () => {
                     <Button
                       onClick={addShoppingItem}
                       size="icon"
-                      className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600"
+                      className="bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600"
                     >
                       <Icon name="Plus" size={18} />
                     </Button>
@@ -380,17 +380,17 @@ const Index = () => {
                 {shopping.map(item => (
                   <div
                     key={item.id}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-white border border-orange-100 hover:border-orange-200 transition-all hover-scale"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-white border border-green-100 hover:border-green-200 transition-all hover-scale"
                   >
                     <Checkbox
                       checked={item.checked}
                       onCheckedChange={() => toggleShopping(item.id)}
-                      className="data-[state=checked]:bg-orange-400 data-[state=checked]:border-orange-400"
+                      className="data-[state=checked]:bg-green-400 data-[state=checked]:border-green-400"
                     />
                     <span className={`flex-1 ${item.checked ? 'line-through text-muted-foreground' : ''}`}>
                       {item.title}
                     </span>
-                    {item.checked && <Icon name="Check" size={18} className="text-orange-500" />}
+                    {item.checked && <Icon name="Check" size={18} className="text-green-500" />}
                   </div>
                 ))}
               </CardContent>
